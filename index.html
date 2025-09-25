@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Zaul 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --bg2: #0b1222;
+      --accent: #ff7ab6;
+      --accent2: #7afcff;
+      --card: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Helvetica,Arial;}
+    body{
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(127,90,255,0.12), transparent),
+                  radial-gradient(900px 400px at 90% 80%, rgba(122,255,217,0.06), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#f8fafc;
+      display:flex;align-items:center;justify-content:center;padding:24px;
+    }
+
+    .card{
+      width:100%;max-width:940px;border-radius:20px;padding:36px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));box-shadow:0 10px 40px rgba(2,6,23,0.6);backdrop-filter: blur(6px);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.04);
+    }
+
+    /* confetti */
+    .confetti{pointer-events:none;position:absolute;inset:0;z-index:0}
+    .confetti i{position:absolute;width:10px;height:18px;transform-origin:center;opacity:0.95;border-radius:2px}
+
+    /* header */
+    .header{position:relative;z-index:2;display:flex;gap:20px;align-items:center}
+    .avatar{
+      width:120px;height:120px;border-radius:20px;flex-shrink:0;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:900;color:#071127;box-shadow:0 8px 30px rgba(122,58,255,0.12), inset 0 -6px 18px rgba(255,255,255,0.08);
+    }
+    .title{flex:1}
+    .title h1{margin:0;font-size:34px;letter-spacing:-0.5px}
+    .title p{margin:6px 0 0;color:rgba(248,250,252,0.78)}
+
+    .btn-row{display:flex;gap:12px;margin-top:18px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 16px;border-radius:12px;color:inherit;text-decoration:none;font-weight:600;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#071127;border:none}
+
+    /* cake area */
+    .stage{display:flex;gap:28px;align-items:center;margin-top:26px;z-index:2}
+    .cake{
+      width:300px;min-width:220px;background:linear-gradient(180deg,#fff 0%, #fff 60%);border-radius:18px;padding:18px;position:relative;box-shadow:0 8px 30px rgba(2,6,23,0.45);
+    }
+    .cake .flame{position:absolute;left:50%;transform:translateX(-50%);top:-28px;width:22px;height:38px;border-radius:50% 50% 40% 40%/60% 60% 40% 40%;background:linear-gradient(180deg,#ffd86b,#ff7a7a);display:flex;align-items:center;justify-content:center;}
+    .cake .flame::after{content:'';width:8px;height:12px;background:linear-gradient(180deg,#fff9c4,#ffd86b);border-radius:50%}
+    .cake .layer{height:64px;border-radius:12px;background:linear-gradient(180deg,#ffecec,#fff2f2);margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6b2232}
+    .cake .sprinkles{position:absolute;inset:8px;pointer-events:none}
+
+    /* message box */
+    .message{flex:1;background:var(--card);padding:22px;border-radius:14px;min-height:180px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+    .message h2{margin:0;font-size:26px}
+    .message p{margin:0;color:rgba(248,250,252,0.8)}
+    .message .from{margin-top:8px;font-size:14px;color:rgba(248,250,252,0.65)}
+
+    /* balloons */
+    .balloons{position:absolute;right:-40px;bottom:20px;z-index:1;transform:rotate(-8deg)}
+    .balloon{width:54px;height:72px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.8));display:flex;align-items:center;justify-content:center;font-weight:800;color:#071127;position:relative;margin:10px}
+    .balloon::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-18px;width:2px;height:24px;background:linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.03));}
+
+    /* responsive */
+    @media (max-width:720px){
+      .header{flex-direction:row}
+      .stage{flex-direction:column;align-items:stretch}
+      .cake{width:100%}
+    }
+
+    /* simple animation */
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+    .avatar, .cake, .message{animation:floaty 4s ease-in-out infinite}
+
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="confetti" aria-hidden="true"></div>
+
+    <div class="header">
+      <div class="avatar">Z</div>
+      <div class="title">
+        <h1>Selamat Ulang Tahun, Zaul! 🎂</h1>
+        <p>Semoga hari ini penuh kejutan manis, tawa, dan momen yang tak terlupakan.</p>
+        <div class="btn-row">
+          <button class="btn primary" onclick="playMelody()">Mainkan Lagu</button>
+          <a class="btn" href="#wish">Baca Ucapan</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="cake" aria-hidden="true">
+        <div class="flame" style="animation: flame 1s infinite alternate;"></div>
+        <div class="layer">Zaul's Cake</div>
+        <div class="layer" style="height:44px;background:linear-gradient(180deg,#ffdfe6,#fff0f6);">Wish &amp; Make a Wish</div>
+        <svg class="sprinkles" viewBox="0 0 300 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="20" width="6" height="2" rx="1" fill="#ff7ab6"/>
+          <rect x="40" y="60" width="4" height="2" rx="1" fill="#7afcff"/>
+          <rect x="110" y="30" width="6" height="2" rx="1" fill="#ffd86b"/>
+          <rect x="200" y="50" width="4" height="2" rx="1" fill="#b38cff"/>
+        </svg>
+      </div>
+
+      <div class="message" id="wish">
+        <h2>Hai Zaul — Happy Birthday!</h2>
+        <p>Semoga di usia yang baru ini semua impianmu lebih dekat untuk dicapai. Tetap sehat, semangat, dan jangan lupa merayakan setiap pencapaian — besar maupun kecil.</p>
+        <div class="from">— Dari teman-teman yang menyayangimu</div>
+      </div>
+    </div>
+
+    <!-- balloons for decoration -->
+    <div class="balloons" aria-hidden="true">
+      <div class="balloon" style="background:linear-gradient(180deg,#ffd1e8,#ff7ab6);">Z</div>
+      <div class="balloon" style="background:linear-gradient(180deg,#d1f7ff,#7afcff);">❤</div>
+      <div class="balloon" style="background:linear-gradient(180deg,#fff2b5,#ffd86b);">🎉</div>
+    </div>
+
+  </div>
+
+  <script>
+    // generate confetti pieces
+    const confettiEl = document.querySelector('.confetti');
+    const colors = ['#ff7ab6','#7afcff','#ffd86b','#b38cff','#ffa78e'];
+    for(let i=0;i<40;i++){
+      const el = document.createElement('i');
+      el.style.left = Math.random()*100 + '%';
+      el.style.top = Math.random()*-10 + '%';
+      el.style.background = colors[Math.floor(Math.random()*colors.length)];
+      el.style.transform = 'rotate('+(Math.random()*360)+'deg)';
+      el.style.animation = `drop ${4+Math.random()*3}s ${Math.random()*2}s linear infinite`;
+      el.style.width = (6+Math.random()*10)+'px';
+      el.style.height = (10+Math.random()*14)+'px';
+      confettiEl.appendChild(el);
+    }
+
+    // confetti drop animation
+    const style = document.createElement('style');
+    style.textContent = `@keyframes drop{0%{opacity:1;transform:translateY(-10vh) rotate(0deg)}100%{opacity:1;transform:translateY(110vh) rotate(360deg)}}`;
+    document.head.appendChild(style);
+
+    // small melody (WebAudio simple)
+    function playMelody(){
+      try{
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const now = ctx.currentTime;
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = 'sine';
+        o.frequency.setValueAtTime(523.25, now); // C5
+        g.gain.setValueAtTime(0.0001, now);
+        g.gain.exponentialRampToValueAtTime(0.12, now+0.02);
+        o.connect(g); g.connect(ctx.destination);
+        o.start();
+        o.frequency.exponentialRampToValueAtTime(659.25, now+0.25);
+        o.frequency.exponentialRampToValueAtTime(783.99, now+0.5);
+        o.frequency.exponentialRampToValueAtTime(659.25, now+0.75);
+        g.gain.exponentialRampToValueAtTime(0.0001, now+1.25);
+        o.stop(now+1.3);
+      }catch(e){alert('Audio tidak didukung di peramban ini')}
+    }
+  </script>
+</body>
+</html>
